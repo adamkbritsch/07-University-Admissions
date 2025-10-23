@@ -1,0 +1,26 @@
+// Evergreen University admissions refreshed palette
+// Base surfaces
+$bgPrimary: #1b1714;   // roasted espresso
+$bgSurface: #2a2220;   // cocoa slope
+
+// Accents
+$accentPrimary: #ff6f61;   // coral ember
+$accentHighlight: #ffd166; // golden citrus
+
+// Text and borders
+$textPrimary: #fff8f1;   // warm parchment
+$textSecondary: #e0d2c2; // soft sand
+$borderColor: #3a2f2a;   // toasted umber divider
+
+// Back-compat variables used across partials
+$primaryColor: $accentHighlight;
+$secondaryColor: $accentPrimary;
+$fontColor: $textPrimary;
+
+$defaultFont: "Source Sans 3", sans-serif;
+$headingFont: "Source Sans 3", sans-serif;
+$lightWeight:300;
+$normalWeight:500;
+$boldWeight:700;
+
+$gutter: 16px;
