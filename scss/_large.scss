@@ -1,0 +1,197 @@
+$max-width-desktop: 94rem;
+$section-gap: $gutter * 1.25;
+$cluster-gap: $gutter;
+$cluster-gap-total: $cluster-gap * 3;
+$plan-gap: $gutter * 1.25;
+$plan-gap-total: $plan-gap * 2;
+
+.site-header,
+#mainWrapper main,
+#footerWrapper footer {
+  max-width: $max-width-desktop;
+  margin: 0 auto;
+}
+
+.site-header {
+  max-width: none;
+  width: 100%;
+  padding: 3rem clamp($gutter, 6vw, $gutter * 3);
+  gap: 2rem;
+}
+
+.brand-text {
+  h1 {font-size: 2.75rem;}
+  p {font-size: 1.15rem;}
+}
+
+.primary-nav {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: $gutter * 1.2;
+  .nav-toggle {
+    display: none;
+  }
+  ul {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: $gutter * 1.2;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    width: auto;
+    li {
+      flex: 0 0 auto;
+      width: auto;
+    }
+  }
+}
+
+main {
+  padding: 5rem 0 7rem;
+  gap: 6rem;
+}
+
+.row {
+  gap: $section-gap;
+}
+
+.column {
+  padding: 0;
+}
+
+.hero {
+  .row {
+    align-items: center;
+    justify-content: space-between;
+  }
+  .column.large-6:first-child {
+    flex: 0 1 54%;
+    max-width: 54%;
+  }
+  .column.large-6:last-child {
+    flex: 0 1 38%;
+    max-width: 38%;
+  }
+  .hero-media {
+    max-width: 32rem;
+    margin-left: auto;
+  }
+  .cta-group {gap: 1.5rem;}
+  .hero-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+.benefits {
+  .row {
+    justify-content: flex-start;
+    gap: $cluster-gap;
+    flex-wrap: nowrap;
+  }
+  .column.large-3 {
+    flex: 0 1 calc((100% - #{$cluster-gap-total}) / 4);
+    max-width: calc((100% - #{$cluster-gap-total}) / 4);
+  }
+}
+
+.plans {
+  .row {
+    justify-content: space-between;
+    gap: $plan-gap;
+    align-items: stretch;
+  }
+  .column.large-4 {
+    flex: 0 1 calc((100% - #{$plan-gap-total}) / 3);
+    max-width: calc((100% - #{$plan-gap-total}) / 3);
+  }
+  .plan-card {
+    padding: 2.75rem;
+    .subtitle {font-size: 1.05rem;}
+  }
+}
+
+.devices {
+  .row {
+    justify-content: flex-start;
+    gap: $cluster-gap;
+    flex-wrap: nowrap;
+  }
+  .column.large-3 {
+    flex: 0 1 calc((100% - #{$cluster-gap-total}) / 4);
+    max-width: calc((100% - #{$cluster-gap-total}) / 4);
+  }
+}
+
+.coverage {
+  padding: 4rem ($gutter * 2.25);
+  .row {
+    align-items: stretch;
+    justify-content: space-between;
+    gap: $gutter * 2;
+  }
+  .column.large-7 {
+    flex: 0 1 60%;
+    max-width: 60%;
+  }
+  .column.large-5 {
+    flex: 0 1 32%;
+    max-width: 32%;
+  }
+}
+
+.support {
+  padding: 4.5rem ($gutter * 2.25);
+  .row {
+    justify-content: flex-start;
+    gap: $cluster-gap;
+    flex-wrap: nowrap;
+  }
+  .column.large-3 {
+    flex: 0 1 calc((100% - #{$cluster-gap-total}) / 4);
+    max-width: calc((100% - #{$cluster-gap-total}) / 4);
+  }
+}
+
+.cta-banner {
+  .cta-card {
+    padding: 3.25rem ($gutter * 2.5);
+    h2 {font-size: 2.75rem;}
+    p {font-size: 1.25rem;}
+  }
+  .row {
+    justify-content: center;
+  }
+}
+
+footer {
+  padding: 3.5rem 0 3rem;
+  text-align: center;
+  align-items: center;
+  .row {
+    gap: $cluster-gap;
+    justify-content: center;
+  }
+  .column.large-3 {
+    flex: 0 1 calc((100% - #{$cluster-gap-total}) / 4);
+    max-width: calc((100% - #{$cluster-gap-total}) / 4);
+    text-align: center;
+  }
+}
+
+// Create the for loop
+@for $i from 1 through 12 {
+  $w: calc($i /12) *100%;
+  .large-#{$i} {
+    flex: 0 1 $w;
+    max-width: $w;
+  }
+}
